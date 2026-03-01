@@ -9,7 +9,7 @@
 #### 📋 Metadatos del Reporte
 
 - **Fecha de generación:** 2026-01-30
-- **Versión del dataset (entrada raw):** spotify_tracks_merged_raw_20260128_130734.parquet
+- **Versión del dataset (entrada raw):** spotify_tracks_merged_raw_20260224_150507.parquet
 - **Versión del dataset (salida interim):** spotify_tracks_interim_20260301_000321.parquet
 - **Total de registros analizados:** 66,156
 - **Versión del código:** (commit hash al actualizar este reporte)
@@ -21,5 +21,5 @@
 
 #### 🔗 Referencias
 
-- Dataset raw utilizado: `data/raw/spotify_tracks_merged_raw_20260128_130734.parquet.parquet`
+- Dataset raw utilizado: `data/raw/sspotify_tracks_merged_raw_20260224_150507.parquet`
 - Dataset interim generado: `data/interim/spotify_tracks_interim_20260301_000321.parquet`

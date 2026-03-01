@@ -12,16 +12,16 @@ Los reportes aquí documentan las **conclusiones específicas** basadas en ejecu
 reports/
 ├── 01_eda/
 │   ├── report_latest.html    # Último reporte HTML generado
-│   ├── ANALYSIS.md           # Documento de análisis con conclusiones
-│   └── README.md             # Metadatos del reporte
+│   ├── ANALYSIS.md           # Documento de análisis con conclusiones (versionado)
+│   └── README.md             # Metadatos y changelog de los reportes
 ├── 02_feature_engineering/
 │   ├── report_latest.html    # Último reporte HTML generado
-│   ├── ANALYSIS.md           # Documento de análisis con conclusiones
-│   └── README.md             # Metadatos del reporte
+│   ├── ANALYSIS.md           # Documento de análisis con conclusiones (versionado)
+│   └── README.md             # Metadatos y changelog de los reportes
 ├── 03_modeling/
 │   ├── report_latest.html    # Último reporte HTML generado
-│   ├── ANALYSIS.md           # Documento de análisis con conclusiones
-│   └── README.md             # Metadatos del reporte
+│   ├── ANALYSIS.md           # Documento de análisis con conclusiones (versionado)
+│   └── README.md             # Metadatos y changelog de los reportes
 └── README.md                  # Este archivo
 ```
 

@@ -15,8 +15,7 @@ venv/
 !data/raw/
 !data/interim/
 !data/processed/
-# Nota: la retencion de .parquet se gestiona por politica de repo
-# (solo ultimo timestamp por familia) y limpieza antes de commit.
+# Nota: la retencion de .parquet se gestiona por politica de repo (solo ultimo timestamp por familia) y limpieza antes de commit.
 
 # Configs sensibles
 *.env
