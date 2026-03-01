@@ -1,0 +1,12 @@
+pandas
+numpy
+requests
+python-dotenv
+pytrends
+matplotlib
+seaborn
+scikit-learn
+jupyter
+nbconvert>=7.0.0
+Flask
+pyarrow

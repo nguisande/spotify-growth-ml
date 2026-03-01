@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Entornos
+.venv/
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datos
+!data/raw/
+!data/interim/
+!data/processed/
+# Nota: la retencion de .parquet se gestiona por politica de repo
+# (solo ultimo timestamp por familia) y limpieza antes de commit.
+
+# Configs sensibles
+*.env
+configs/*.yaml
+tokens/*.json
+
+# Reportes (mantener algunos versionados, ignorar temporales)
+reports/**/*.html
+!reports/**/report_latest.html
+!reports/**/ANALYSIS*.md
+!reports/**/README.md
+!reports/README.md
+
+# Model performance: versionar solo CSV con timestamp
+reports/03_modeling/model_performance/*.csv
+!reports/03_modeling/model_performance/*_????????_??????.csv
+
+# Prompts
+prompts/**/*.md

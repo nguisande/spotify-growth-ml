@@ -1,0 +1,11 @@
+feature,importance
+artist_avg_popularity,0.38742799642339215
+playlist_avg_popularity,0.13686322422052358
+artist_popularity_std,0.10515204561502352
+years_since_release,0.09403161798878198
+playlist_popularity_std,0.06474804227971592
+artist_track_count,0.05168991192860169
+album_release_year,0.04738558897146152
+artist_avg_duration,0.042562538804134444
+playlist_track_count,0.03649603068338573
+playlist_avg_duration,0.03364300308497954
