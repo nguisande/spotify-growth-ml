@@ -302,17 +302,26 @@ Para evitar crecimiento innecesario del repositorio:
 * ✅ Dataset crudo versionado
 * ✅ EDA completo
 * ✅ Target de ML definido
-* ✅ Feature engineering basico
-* ✅ Modelado y evaluación
+* ✅ Feature engineering básico
+* ✅ Clasificación supervisada con validación cruzada, ensambles y optimización de hiperparámetros
+* ✅ Regresión supervisada con validación cruzada y optimización de hiperparámetros
+* ✅ Aprendizaje no supervisado con clustering, ensamble (Consensus Clustering) y análisis de enriquecimiento
+
+**Modelo en producción recomendado:** `GradientBoosting_Tuned` (clasificación) — ROC-AUC `0.9518`, F1 clase 1 `0.8083`
 
 ---
 
 ## 📈 Próximos pasos
 
-* Integrar señales externas (Ej. Google Trends por artista).
-* Validacion cruzada y/o validacion temporal para robustez.
-* Tuning de hiperparametros en RandomForest y GradientBoosting.
-* Definicion de umbral operativo segun objetivo de negocio (precision vs recall).
+1. **Feature engineering avanzado** — Incorporar audio features de la Spotify API (`danceability`, `energy`, `valence`, `tempo`) para mejorar el R² de regresión (actualmente `0.66`) y potencialmente también la clasificación. Estas features están disponibles vía el endpoint `/audio-features` y representan la brecha de señal más relevante identificada por los resultados actuales.
+
+2. **Pipeline de scoring reproducible** — Serializar `GradientBoosting_Tuned` con `joblib` y construir un script `src/scoring/score_tracks.py` que reciba un parquet de tracks nuevos y devuelva predicción binaria + probabilidad de `popular_high`. Documentar contrato de entrada (las 10 features requeridas) y contrato de salida.
+
+3. **Validación temporal** — Reemplazar el holdout estratificado por un split temporal usando `album_release_year` como eje (por ejemplo: train en tracks anteriores a 2024, test en 2024+) para medir degradación real por data drift y evaluar si el modelo generaliza a lanzamientos futuros.
+
+4. **Optimización del umbral de decisión** — Definir el umbral operativo de `GradientBoosting_Tuned` según el objetivo de negocio: umbral bajo (maximizar recall) para no perder tracks de alto potencial; umbral alto (maximizar precisión) para campañas de inversión selectiva. Construir curva Precision-Recall con análisis de costo.
+
+5. **Integración de señales externas** — Conectar `pytrends` (ya en `requirements.txt`) para enriquecer el dataset con volumen de búsqueda en Google Trends por artista en la semana de lanzamiento, como proxy de awareness externo a la plataforma.
 
 ---
 

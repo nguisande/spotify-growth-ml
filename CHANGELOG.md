@@ -4,6 +4,37 @@ Todos los cambios importantes de este proyecto se documentan en este archivo.
 
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-04-19
+
+### Added
+- Módulo 2 de regresión supervisada en `notebooks/03_modeling.ipynb`: 6 modelos (LinearRegression, Ridge, RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor, BaggingRegressor), validación KFold(5), RandomizedSearchCV sobre RF y GradientBoosting, scatter y residual plots.
+- Módulo 3 de aprendizaje no supervisado en `notebooks/03_modeling.ipynb`: selección de k por método del codo y silhouette, KMeans, AgglomerativeClustering, DBSCAN con búsqueda en grilla, Consensus Clustering (ensamble de 20 KMeans sobre subsample de 5K puntos), análisis de enriquecimiento por cluster, visualización PCA 2D.
+- Validación cruzada `StratifiedKFold(5)` aplicada a todos los modelos de clasificación.
+- Modelos de ensamble explícitos en clasificación: `AdaBoostClassifier`, `BaggingClassifier`, `ExtraTreesClassifier`.
+- `RandomizedSearchCV` en clasificación sobre `RandomForestClassifier` (`n_iter=20`) y `GradientBoostingClassifier` (`n_iter=15`).
+- Nuevos directorios de artefactos: `reports/03_modeling/reg_performance/` y `reports/03_modeling/unsup_performance/`.
+- Reporte de análisis `reports/03_modeling/ANALYSIS_20260419.md` cubriendo los 3 paradigmas completos (referencia vigente).
+
+### Changed
+- `notebooks/03_modeling.ipynb` reestructurado en 3 módulos auto-contenidos (Clasificación, Regresión, No Supervisado), cada uno con comparativa de modelos, resumen ejecutivo y exportación de artefactos.
+- Sección de exportación de clasificación actualizada para reflejar resultados post-tuning (`comparison_all_clf` incluye baseline + ensambles + tuned).
+- `reports/03_modeling/README.md` actualizado con changelog de ejecuciones v1.0 y v2.0.
+
+### Notes
+- Última ejecución documentada de Modeling (v2.0):
+  - Reporte: `reports/03_modeling/ANALYSIS_20260419.md`
+- Modelo ganador clasificación: `GradientBoosting_Tuned`
+  - ROC-AUC: `0.9518`
+  - PR-AUC: `0.8999`
+  - F1 (clase positiva): `0.8083`
+  - Accuracy: `0.8802`
+- Modelo ganador regresión: `RandomForestRegressor`
+  - CV RMSE: `14.14 ± 0.15`
+  - CV R²: `0.66 ± 0.007`
+- Modelo ganador no supervisado: `KMeans k=2`
+  - Silhouette: `0.2191`
+  - Enriquecimiento: Cluster 1 con 45.4% popular vs Cluster 0 con 22.7%
+
 ## [1.0.0] - 2026-03-01
 
 ### Added

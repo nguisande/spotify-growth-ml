@@ -1,0 +1,7 @@
+model,cv_rmse_mean,cv_rmse_std,cv_r2_mean,cv_r2_std
+RandomForestRegressor,14.1363,0.1529,0.6573,0.0068
+GradientBoostingRegressor,14.3818,0.1514,0.6454,0.0048
+BaggingRegressor,14.5448,0.142,0.6373,0.0048
+Ridge,15.2905,0.1226,0.5992,0.0033
+LinearRegression,15.2905,0.1226,0.5992,0.0033
+AdaBoostRegressor,16.3233,0.1108,0.5432,0.0038

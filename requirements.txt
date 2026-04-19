@@ -10,3 +10,4 @@ jupyter
 nbconvert>=7.0.0
 Flask
 pyarrow
+scipy

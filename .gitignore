@@ -35,3 +35,6 @@ reports/03_modeling/model_performance/*.csv
 
 # Prompts
 prompts/**/*.md
+
+# Skill
+CLAUDE.md

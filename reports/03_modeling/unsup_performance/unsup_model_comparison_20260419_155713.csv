@@ -1,0 +1,5 @@
+model,n_clusters,silhouette,davies_bouldin,calinski_harabasz
+KMeans,2,0.2191,1.8044,17352.4471
+AgglomerativeClustering,2,0.2048,1.7822,12861.9789
+DBSCAN,8,0.1666,0.65,709.951
+"Consensus Clustering (Ensamble, subsample)",2,0.2212,1.793,1270.3746
